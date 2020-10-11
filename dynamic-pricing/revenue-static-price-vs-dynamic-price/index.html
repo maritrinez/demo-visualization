@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
+  </head>
+
+  <body>
+    <br>
+    <div style="width: 100%;">
+      <div id="div_chart" style="width: 50%; height: 500px; float: left;"></div>
+      <div id="div_text" style="margin-left: 50%; height: 500px;">
+        <input type="range" id="points" name="points" min="950" max="1050" oninput="drawChart(this.value / 10)">
+      </div>
+    </div>
+  </body>
+</html>
