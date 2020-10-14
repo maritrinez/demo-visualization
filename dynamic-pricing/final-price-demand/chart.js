@@ -9,8 +9,11 @@ function drawChart() {
   data1.addRows(rawData1.map(r => [time_string_to_time_of_day(r[0]), r[1]]));
 
   var options = {
-    title: 'Unique Visitors',
-    curveType: 'function'
+    title: 'Unique Visitors (5 minute intervals)',
+    hAxis: {
+      title: 'Time',
+      format: "h:mm a"
+    }
   };
 
   var chart1 = new google.visualization.LineChart(document.getElementById('div_chart1'));
@@ -24,7 +27,11 @@ function drawChart() {
   data2.addRows(rawData2.map(r => [time_string_to_time_of_day(r[0]), r[1]]));
 
   var options = {
-    title: 'Conversion Rate'
+    title: 'Conversion Rate Percentage (5 minute intervals)',
+    hAxis: {
+      title: 'Time',
+      format: "h:mm a"
+    }
   };
 
   var chart2 = new google.visualization.LineChart(document.getElementById('div_chart2'));

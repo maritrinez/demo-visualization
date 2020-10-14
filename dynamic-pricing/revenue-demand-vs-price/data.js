@@ -129,3 +129,5 @@ var conversionRate = [
 1.90,
 1.88,
 ];
+
+var initialSelectedPrice = 98.50;

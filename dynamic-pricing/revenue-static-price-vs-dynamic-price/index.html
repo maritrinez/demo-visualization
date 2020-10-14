@@ -8,9 +8,34 @@
   <body>
     <br>
     <div style="width: 100%;">
-      <div id="div_chart" style="width: 50%; height: 500px; float: left;"></div>
-      <div id="div_text" style="margin-left: 50%; height: 500px;">
-        <input type="range" id="points" name="points" min="950" max="1050" oninput="drawChart(this.value / 10)">
+      <div id="div_chart" style="margin: auto; width: 50%; height: 500px; ;"></div>
+      <div id="div_text" style="margin: auto; width: 50%; height: 500px;">
+        <div style="margin: auto; width: 90%">
+          <center>$95 <input type="range" id="points" name="points" min="9500" max="10500" oninput="drawChart(this.value / 100)"> $105</center>
+          <br/>
+          <div>
+            <center>Selected Price: <text id="currentPrice"></center>
+          </div>
+          <div>
+            <text style="color: blue">Available Inventory:</text>
+            <b>
+              <text id="availableInventory" style="color: green">182 (20%)</text>
+            </b>
+          </div>
+          <div>
+            <text style="color: blue">Total Booked Revenue for Today:</text>
+            <b>
+              <text id="totalBookedRevenueForToday" style="color: green"></text>
+            </b>
+          </div>
+          <div>
+            <text style="color: blue">Estimated Booked Revenue for Today with Static Price:</text>
+            <b>
+              <text id="estimatedBookedRevenueForTodayWithStaticPrice" style="color: green"></text>
+            </b>
+            <text id="estVsActualPercent", style="color: green"></text>
+          </div>
+        </div>
       </div>
     </div>
   </body>
