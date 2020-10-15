@@ -23,14 +23,22 @@ function drawChart() {
   var data2 = new google.visualization.DataTable();
   data2.addColumn('timeofday', 'Time');
   data2.addColumn('number', 'Conversion Rate');
+  data2.addColumn({type: "string", role: "tooltip", p: {'html': true}});
 
-  data2.addRows(rawData2.map(r => [time_string_to_time_of_day(r[0]), r[1]]));
+  data2.addRows(rawData2.map(r => [
+    time_string_to_time_of_day(r[0]),
+    r[1],
+    `<b>${r[0]}</b><br>Conversion Rate: <b>${r[1]}%</b>`
+  ]));
 
   var options = {
     title: 'Conversion Rate Percentage (5 minute intervals)',
     hAxis: {
       title: 'Time',
       format: "h:mm a"
+    },
+    tooltip: {
+      isHtml: true
     }
   };
 
@@ -40,5 +48,5 @@ function drawChart() {
 }
 
 function time_string_to_time_of_day(time_str) {
-  return time_str.split(":").map(x => Number(x));
+  return (time_str + ":00").split(":").map(x => Number(x));
 }

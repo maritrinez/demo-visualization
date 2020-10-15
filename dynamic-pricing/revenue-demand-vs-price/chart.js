@@ -9,21 +9,22 @@ function eventHandler(e) {
   updateNumbers(staticPrice[e.row]);
 }
 
+let currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
+
 function updateNumbers(selectedPrice) {
   let row = staticPrice.findIndex(x => x === selectedPrice);
 
-  var currencyFormatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
-  var projectedRevenue = revenue[row] - 100;
-  var unrealizedRevenue = revenue[row] - projectedRevenue;
+  var projectedRevenue = revenue[row];
+  var unrealizedRevenue = Math.max(...revenue) - revenue[row];
 
   document.getElementById('selectedRentalPrice').innerHTML = `${currencyFormatter.format(staticPrice[row])}`;
-  document.getElementById('demandAtThatPrice').innerHTML = `${conversionRate[row]}`;
+  document.getElementById('conversionRatePctAtThatPrice').innerHTML = `${conversionRate[row]}`;
   document.getElementById('projectedRevenue').innerHTML = `${currencyFormatter.format(projectedRevenue)}`;
-  document.getElementById('unrealizedRevenue').innerHTML = `${unrealizedRevenue}`
+  document.getElementById('unrealizedRevenue').innerHTML = `${currencyFormatter.format(unrealizedRevenue)}`
 }
 
 function drawChart(selectedPrice) {
@@ -39,13 +40,13 @@ function drawChart(selectedPrice) {
     [x,
      x == 99.5 ? " " : null,
      revenue[i],
-     `Price: <b>$${staticPrice[i]}</b><br>Revenue: <b>$${revenue[i]}</b><br>Conversion Rate: <b>${conversionRate[i]}%</b>`,
+     `Price: <b>$${staticPrice[i]}</b><br>Revenue: <b>${currencyFormatter.format(revenue[i])}</b><br>Conversion Rate: <b>${conversionRate[i]}%</b>`,
      conversionRate[i] / 100,
-     `Price: <b>$${staticPrice[i]}</b><br>Revenue: <b>$${revenue[i]}</b><br>Conversion Rate: <b>${conversionRate[i]}%</b>`
+     `Price: <b>$${staticPrice[i]}</b><br>Revenue: <b>${currencyFormatter.format(revenue[i])}</b><br>Conversion Rate: <b>${conversionRate[i]}%</b>`
     ]));
 
   var options = {
-    title: 'Revenue and Conversion Rate Percentage',
+    title: 'Revenue and Conversion Rate Percentage vs. Price',
     series: {
       0: {targetAxisIndex: 0},
       1: {targetAxisIndex: 1}
