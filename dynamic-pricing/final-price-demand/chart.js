@@ -5,8 +5,13 @@ function drawChart() {
   var data1 = new google.visualization.DataTable();
   data1.addColumn('timeofday', 'Time');
   data1.addColumn('number', 'Unique Visitors');
+  data1.addColumn({type: "string", role: "tooltip", p: {'html': true}});
 
-  data1.addRows(rawData1.map(r => [time_string_to_time_of_day(r[0]), r[1]]));
+  data1.addRows(rawData1.map(r => [
+    time_string_to_time_of_day(r[0]),
+    r[1],
+    `<b>${milToCivTime(r[0])}</b><br>Unique Visitors: <b>${r[1]}</b>`
+  ]));
 
   var options = {
     title: 'Unique Visitors (5 minute intervals)',
@@ -14,6 +19,9 @@ function drawChart() {
     hAxis: {
       title: 'Time',
       format: "h:mm a"
+    },
+    tooltip: {
+      isHtml: true
     }
   };
 
@@ -29,7 +37,7 @@ function drawChart() {
   data2.addRows(rawData2.map(r => [
     time_string_to_time_of_day(r[0]),
     r[1],
-    `<b>${r[0]}</b><br>Conversion Rate: <b>${r[1]}%</b>`
+    `<b>${milToCivTime(r[0])}</b><br>Conversion Rate: <b>${r[1]}%</b>`
   ]));
 
   var options = {
@@ -51,4 +59,13 @@ function drawChart() {
 
 function time_string_to_time_of_day(time_str) {
   return (time_str + ":00").split(":").map(x => Number(x));
+}
+
+function milToCivTime(timeStr) {
+  // convert military time (13:51) to civilian time (1:51 pm)
+  let hour, minute, rest;
+
+  [hour, minute, ...rest] = timeStr.split(":");
+
+  return `${[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][parseInt(hour) % 12]}:${minute} ${(parseInt(hour) < 12 ) ? "AM" : "PM"}`
 }
