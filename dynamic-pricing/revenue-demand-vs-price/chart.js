@@ -73,7 +73,7 @@ function drawChart(selectedPrice) {
     annotations: {
       style: 'line',
       stem: {
-        color: 'red'
+        color: 'grey'
       },
     },
     hAxis: {
