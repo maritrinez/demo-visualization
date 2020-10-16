@@ -18,6 +18,7 @@ function drawChart(staticPrice) {
 
   var options = {
     title: 'Revenue (Dynamic Price vs Static Price, 5 minute intervals)',
+    fontName: 'Raleway',
     hAxis: {
       title: 'Time',
       format: "h:mm a"

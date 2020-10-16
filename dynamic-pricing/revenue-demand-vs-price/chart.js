@@ -47,6 +47,7 @@ function drawChart(selectedPrice) {
 
   var options = {
     title: 'Revenue and Conversion Rate Percentage vs. Price',
+    fontName: 'Raleway',
     series: {
       0: {targetAxisIndex: 0},
       1: {targetAxisIndex: 1}

@@ -10,6 +10,7 @@ function drawChart() {
 
   var options = {
     title: 'Unique Visitors (5 minute intervals)',
+    fontName: 'Raleway',
     hAxis: {
       title: 'Time',
       format: "h:mm a"
@@ -33,6 +34,7 @@ function drawChart() {
 
   var options = {
     title: 'Conversion Rate Percentage (5 minute intervals)',
+    fontName: 'Raleway',
     hAxis: {
       title: 'Time',
       format: "h:mm a"
