@@ -33,7 +33,7 @@ function drawChart(selectedPrice) {
   data.addColumn({type: 'string', role: 'annotation'});
   data.addColumn('number', 'Revenue');
   data.addColumn({type: "string", role: "tooltip", p: {'html': true}});
-  data.addColumn('number', 'Conversion Rate Percentage');
+  data.addColumn('number', 'Conversion Rate');
   data.addColumn({type: "string", role: "tooltip", p: {'html': true}});
 
   data.addRows(staticPrice.map((x, i) =>
@@ -46,7 +46,7 @@ function drawChart(selectedPrice) {
     ]));
 
   var options = {
-    title: 'Revenue and Conversion Rate Percentage vs. Price',
+    title: 'Revenue and Conversion Rate vs. Price',
     fontName: 'Raleway',
     series: {
       0: {targetAxisIndex: 0},
@@ -58,12 +58,18 @@ function drawChart(selectedPrice) {
           min: 49000,
           max: 54000
         },
+        minorGridlines: {
+          color: "none"
+        },
         format: "currency"
       },
       1: {
         viewWindow: {
           min: 0.015,
           max: 0.04
+        },
+        minorGridlines: {
+          color: "none"
         },
         format: "percent"
       }
