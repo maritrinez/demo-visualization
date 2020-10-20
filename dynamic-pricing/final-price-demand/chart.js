@@ -15,7 +15,7 @@ function drawChart() {
     time_string_to_time_of_day(r[0]),
     smoothedVisitors[i],
     `<b>${milToCivTime(r[0])}</b><br>Unique Visitors: <b>${smoothedVisitors[i]}</b>`,
-    r[1],
+    i % 2 === 0 ? r[1] : null,
     `<b>${milToCivTime(r[0])}</b><br>Unique Visitors: <b>${smoothedVisitors[i]}</b>`
   ]));
 
@@ -32,8 +32,9 @@ function drawChart() {
       },
       1: {
         targetAxisIndex: 0,
-        color: "gray",
-        lineDashStyle: [2, 4]
+        color: "black",
+        lineDashStyle: [0,0],
+        pointSize: 1
       }
     },
     tooltip: {
