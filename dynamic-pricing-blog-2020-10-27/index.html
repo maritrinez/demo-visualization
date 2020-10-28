@@ -22,17 +22,23 @@
   </head>
 
   <body>
-  
 
-  
+
+
     <br>
     <div style="width: 800px;">
-    
-   <center>
+
+      <center>
+        <div>
+          Move the slider below to select a specific static price and see how that affects the day’s revenue.
+        </div>
+
+        <p/>
+
    <div class="row">
      <div class="column">
      <text style="color: #555555; font-size:12px">Select Static Price:</text>
-     
+
      <div id="div_slider" style="margin: auto; width: 100%">
       <center>$95 <input type="range" id="points" name="points" min="9500" max="10500" oninput="drawChart(this.value / 100)"> $105</center>
         <div>
@@ -40,12 +46,12 @@
         </div>
      </div>
      </div>
-  
+
      <div class="column">
           <div>
             <text id="totalBookedRevenueForToday" style="color: #009977; font-size:24px"></text> <br>
             <text style="color: gray; font-size:12px">Actual Revenue with dynamic pricing</text>
-   
+
             </b>
           </div>
      </div>
@@ -53,11 +59,11 @@
      <div class="column">
           <div>
 
-              <text id="estimatedBookedRevenueForTodayWithStaticPrice" style="font-size:24px"></text> 
+              <text id="estimatedBookedRevenueForTodayWithStaticPrice" style="font-size:24px"></text>
                          <text id="estVsActualPercent", style="color: green"></text>
               <br>
             <text style="color: gray; font-size:12px">Estimated Revenue with Static Price</text>
- 
+
           </div>
      </div>
    </div>
