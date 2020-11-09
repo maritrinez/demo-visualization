@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://visualizados.com/demo_car_rental_demand/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./demo_car_rental_demand_files/styles.css">
+  <!-- TEMP::load d3js on the browser on dev -->
+  <!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
+</head>
+
+<body>
+  <div class="content">
+  <!--   <div id="visitors" class="chart-container">
+      <div class="intro">
+        We can capture and produce analytics on unique visitors to the rental website and mobile app and subsequent conversion rate. Run your mouse over the charts to see the number of visitors or conversion rate in each five minute interval.
+      </div>
+      <div class="chart-header"></div>
+      <div class="chart"></div>
+    </div>
+
+    
+    <div id="revenue" class="chart-container">
+      <div class="intro">
+        We can compare actual pricing (dynamically set) to a scenario where you vary the static price presented to renters. For this data, you have renters from around 7am to 12pm that are relatively price insensitive to a daily rate of up to around $103, while you have renters earlier and later than that interval who are in general more price sensitive. Use the slider to vary the static price to see how this effects revenue during the day, and the total revenue collected in a 12 hour period.
+      </div>
+      <div class="chart-header"></div>
+      <div class="chart"></div>
+    </div> -->
+
+
+
+    <div id="demand" class="chart-container">
+  <!--     <div class="intro">
+        Through A/B testing we can generate a demand curve, i.e. the average conversion rate over some time period vs. a price that is presented to a renter. Mouse over the graphs to see the revenue and average conversion rate for a 12hr period for a given static price.
+      </div> -->
+      <div class="chart-header"><div class="main"><div class="title">A/B testing results</div><div class="subtitle">Revenue and Demand vs. Price. <tspan>03:00 AM - 03:00 PM.<tspan></tspan></tspan></div></div><div class="legend"><div class="cell revenue"><div class="details figures"><div class="value figure">$53,163 <tspan>max. revenue</tspan></div></div><div class="details text revenue">Maximum revenue</div></div><div class="cell conversion"><div class="details figures"><div class="value figure">2.2% <tspan>average</tspan></div></div><div class="details text conversion">Conversion rate</div></div></div></div>
+      <div class="chart"><svg width="700" height="560"><g transform="translate(40, 100)"><g class="chart axis x" transform="translate(0, 430)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,6V0.5H620.5V6"></path><g class="tick" opacity="1" transform="translate(9.75786924939468,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$95</text></g><g class="tick" opacity="1" transform="translate(69.80629539951575,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$96</text></g><g class="tick" opacity="1" transform="translate(129.8547215496368,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$97</text></g><g class="tick" opacity="1" transform="translate(189.90314769975785,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$98</text></g><g class="tick" opacity="1" transform="translate(249.9515738498789,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$99</text></g><g class="tick" opacity="1" transform="translate(309.99999999999994,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$100</text></g><g class="tick" opacity="1" transform="translate(370.04842615012103,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$101</text></g><g class="tick" opacity="1" transform="translate(430.0968523002421,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$102</text></g><g class="tick" opacity="1" transform="translate(490.14527845036315,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$103</text></g><g class="tick" opacity="1" transform="translate(550.1937046004842,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$104</text></g><g class="tick" opacity="1" transform="translate(610.2421307506053,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">$105</text></g></g><g class="chart axis yLeft" transform="translate(0, 0)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="currentColor" d="M-6,430.5H0.5V0.5H-6"></path><g class="tick" opacity="1" transform="translate(0,387.5)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">$46k</text></g><g class="tick" opacity="1" transform="translate(0,301.5)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">$48k</text></g><g class="tick" opacity="1" transform="translate(0,215.5)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">$50k</text></g><g class="tick" opacity="1" transform="translate(0,129.50000000000003)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">$52k</text></g><g class="tick" opacity="1" transform="translate(0,43.49999999999999)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">$54k</text></g></g><g class="chart axis yRight" transform="translate(620, 0)" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><path class="domain" stroke="currentColor" d="M6,430.5H0.5V0.5H6"></path><g class="tick" opacity="1" transform="translate(0,430.5)"><line stroke="currentColor" x2="6"></line><text fill="currentColor" x="9" dy="0.32em">0%</text></g><g class="tick" opacity="1" transform="translate(0,327.13461538461536)"><line stroke="currentColor" x2="6"></line><text fill="currentColor" x="9" dy="0.32em">1%</text></g><g class="tick" opacity="1" transform="translate(0,223.76923076923075)"><line stroke="currentColor" x2="6"></line><text fill="currentColor" x="9" dy="0.32em">2%</text></g><g class="tick" opacity="1" transform="translate(0,120.40384615384616)"><line stroke="currentColor" x2="6"></line><text fill="currentColor" x="9" dy="0.32em">3%</text></g><g class="tick" opacity="1" transform="translate(0,17.038461538461526)"><line stroke="currentColor" x2="6"></line><text fill="currentColor" x="9" dy="0.32em">4%</text></g></g><g class="revenue-bars"><path class="rect down revenue" d="M7.503631961259089,121.19120000000004
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v305.80879999999996
+      h-10.508474576271185
+      v-305.80879999999996
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M22.515738498789354,116.4414200000001
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v310.5585799999999
+      h-10.508474576271185
+      v-310.5585799999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M37.52784503631962,111.68131999999993
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v315.3186800000001
+      h-10.508474576271185
+      v-315.3186800000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M52.53995157384988,107.52021000000006
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v319.4797899999999
+      h-10.508474576271185
+      v-319.4797899999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M67.55205811138015,103.35135999999986
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v323.6486400000001
+      h-10.508474576271185
+      v-323.6486400000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M82.5641646489104,99.64303999999997
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v327.35696
+      h-10.508474576271185
+      v-327.35696
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M97.57627118644068,95.92870000000005
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v331.07129999999995
+      h-10.508474576271185
+      v-331.07129999999995
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M112.58837772397095,93.70129999999992
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v333.29870000000005
+      h-10.508474576271185
+      v-333.29870000000005
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M127.60048426150121,91.47131999999992
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v335.52868000000007
+      h-10.508474576271185
+      v-335.52868000000007
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M142.61259079903147,89.07192000000009
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v337.9280799999999
+      h-10.508474576271185
+      v-337.9280799999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M157.62469733656172,86.66950999999999
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v340.33049
+      h-10.508474576271185
+      v-340.33049
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M172.636803874092,84.43178999999995
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v342.56821
+      h-10.508474576271185
+      v-342.56821
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M187.64891041162227,82.19192000000008
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v344.8080799999999
+      h-10.508474576271185
+      v-344.8080799999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M202.66101694915253,80.71014000000015
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v346.28985999999986
+      h-10.508474576271185
+      v-346.28985999999986
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M217.6731234866828,79.2275
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v347.7725
+      h-10.508474576271185
+      v-347.7725
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M232.68523002421307,79.17331999999993
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v347.82668000000007
+      h-10.508474576271185
+      v-347.82668000000007
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M247.69733656174333,79.11871000000004
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v347.88129
+      h-10.508474576271185
+      v-347.88129
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M262.7094430992736,79.05807999999992
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v347.9419200000001
+      h-10.508474576271185
+      v-347.9419200000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue highlight" d="M277.72154963680384,78.99745000000009
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v348.0025499999999
+      h-10.508474576271185
+      v-348.0025499999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M292.7336561743341,80.06944000000007
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v346.9305599999999
+      h-10.508474576271185
+      v-346.9305599999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M307.74576271186436,81.14099999999999
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v345.85900000000004
+      h-10.508474576271185
+      v-345.85900000000004
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M322.7578692493947,82.12999999999998
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v344.87
+      h-10.508474576271185
+      v-344.87
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M337.76997578692493,83.11814000000012
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v343.88185999999985
+      h-10.508474576271185
+      v-343.88185999999985
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M352.7820823244552,86.54308999999989
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v340.4569100000001
+      h-10.508474576271185
+      v-340.4569100000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M367.79418886198545,89.96288000000017
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v337.03711999999985
+      h-10.508474576271185
+      v-337.03711999999985
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M382.8062953995157,92.88774000000002
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v334.11226
+      h-10.508474576271185
+      v-334.11226
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M397.81840193704596,95.8091600000001
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v331.19083999999987
+      h-10.508474576271185
+      v-331.19083999999987
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M412.8305084745762,100.33404999999993
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v326.66595000000007
+      h-10.508474576271185
+      v-326.66595000000007
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M427.84261501210653,104.8503399999999
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v322.1496600000001
+      h-10.508474576271185
+      v-322.1496600000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M442.8547215496368,109.85038000000013
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v317.14961999999986
+      h-10.508474576271185
+      v-317.14961999999986
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M457.86682808716705,114.83880999999992
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v312.1611900000001
+      h-10.508474576271185
+      v-312.1611900000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M472.8789346246973,120.05299000000001
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v306.94701
+      h-10.508474576271185
+      v-306.94701
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M487.89104116222757,125.25470000000007
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v301.74529999999993
+      h-10.508474576271185
+      v-301.74529999999993
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M502.9031476997578,133.96564000000012
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v293.0343599999999
+      h-10.508474576271185
+      v-293.0343599999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M517.9152542372881,142.64260999999985
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v284.3573900000001
+      h-10.508474576271185
+      v-284.3573900000001
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M532.9273607748183,151.1316700000001
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v275.8683299999999
+      h-10.508474576271185
+      v-275.8683299999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M547.9394673123486,159.58848
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v267.41152
+      h-10.508474576271185
+      v-267.41152
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M562.9515738498789,170.19701
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v256.80299
+      h-10.508474576271185
+      v-256.80299
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M577.9636803874091,180.75436999999988
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v246.24563000000012
+      h-10.508474576271185
+      v-246.24563000000012
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M592.9757869249394,191.9016900000001
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v235.0983099999999
+      h-10.508474576271185
+      v-235.0983099999999
+      a3,3 0 0 1 3,-3
+      z"></path><path class="rect down revenue" d="M607.9878934624696,202.99225
+      h4.508474576271185
+      a3,3 0 0 1 3,3
+      v224.00775
+      h-10.508474576271185
+      v-224.00775
+      a3,3 0 0 1 3,-3
+      z"></path></g><g class="demand"><path class="line conversion" d="M9.75786924939468,206.73076923076923L24.769975786924945,206.73076923076923L39.78208232445521,206.73076923076923L54.794188861985475,206.73076923076923L69.80629539951575,206.73076923076923L84.818401937046,207.7644230769231L99.83050847457628,207.7644230769231L114.84261501210655,207.7644230769231L129.8547215496368,207.7644230769231L144.86682808716705,208.79807692307693L159.8789346246973,208.79807692307693L174.8910411622276,208.79807692307693L189.90314769975785,209.83173076923077L204.9152542372881,209.83173076923077L219.9273607748184,210.86538461538458L234.93946731234865,210.86538461538458L249.9515738498789,211.89903846153842L264.96368038740917,211.89903846153842L279.9757869249394,212.93269230769226L294.9878934624697,212.93269230769226L309.99999999999994,213.96634615384616L325.01210653753026,215L340.0242130750605,215L355.0363196125908,216.03365384615384L370.04842615012103,217.06730769230768L385.0605326876513,218.10096153846152L400.07263922518155,218.10096153846152L415.0847457627118,219.13461538461536L430.0968523002421,220.16826923076925L445.1089588377724,221.20192307692307L460.12106537530263,222.23557692307693L475.1331719128329,223.26923076923075L490.14527845036315,224.30288461538464L505.1573849878934,225.33653846153842L520.1694915254237,226.37019230769232L535.181598062954,228.4375L550.1937046004842,229.47115384615384L565.2058111380145,230.50480769230768L580.2179176755448,232.57211538461536L595.230024213075,233.60576923076925L610.2421307506053,235.6730769230769" fill="none"></path></g><defs><filter id="shadow" x="-50%" y="-50%" width="250%" height="250%"><fedropshadow dx="0" dy="0" stdDeviation="2" flood-color="#A5A6AE"></fedropshadow></filter></defs><g class="ttip tip-elements"></g></g></svg><div class="optimal" style="left: 659.534px; top: 226.497px;">Optimal <span>$99.50</span></div></div>
+    </div>
+    
+  </div>
+  <script src="./demo_car_rental_demand_files/index.js"></script>
+
+
+</body></html>
