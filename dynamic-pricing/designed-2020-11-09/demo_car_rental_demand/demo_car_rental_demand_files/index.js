@@ -6638,8 +6638,8 @@
 
     // - - - RESIZE
     window.addEventListener('resize', () => {
-      visitorsChart.build();
-      revenueChart.build();
+      // visitorsChart.build();
+      // revenueChart.build();
       demandChart.build();
 
     });
