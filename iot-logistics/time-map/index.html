@@ -19,9 +19,9 @@
     </style>
 
     <!-- UPDATE VERSION # IF YOU NEED TO REPUBLISH -->
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel='stylesheet' href='main.css?version=1.4' />
+    <link rel='stylesheet' href='main.css?version=1.5' />
 
   </head>
   <body style='height: auto;'>
@@ -40,18 +40,6 @@
       <div class="graphic__text">
         <h1 class="graphic__text--hed benton-bold"></h1>
         <h3 class="graphic__text--subhed benton-regular"></h3>
-
-        <!-- Legend if you want it -->
-        <!-- <div class="graphic__legend">
-          <span class="legend-box legend-box-1"></span>
-          <span class="legend-text">Legend text 1</span>
-          <span class="legend-box legend-box-2"></span>
-          <span class="legend-text">Legend text 2</span>
-          <span class="legend-box legend-box-3"></span>
-          <span class="legend-text">Legend text 3</span>
-          <span class="legend-box legend-box-4"></span>
-          <span class="legend-text">Legend text 4</span>
-        </div> -->
       </div>
 
       <div id="wallaroo-map">
@@ -95,24 +83,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-      <!-- begin ai2html here DO NOT MODIFY THIS LINE -->
-
-      <!-- end ai2html here DO NOT MODIFY THIS LINE -->
-
-      <div class='source-and-credit bentonsanscond-regular'>
-        <!-- <p class='source'><span>Source: Source</span></p>
-        <p class='credit'><span>Reporter/Globe Staff</span></p> -->
-      </div>
       <!--
       ==========================
       END OF GRAPHIC CODE
@@ -132,22 +102,16 @@
     -->
 
 
-    <!-- (begin) globe iframe embed -->
-    <script src='https://apps.bostonglobe.com/common/js/pym/pym-1.3.2.min.js'></script>
     <script>
       // version
-      if (window.console && console.log) console.log('-- globe iframe graphic v2.0.3 --');
       (function() {
         var d = new Date();
         var timestamp = d.getTime();
         var js = 'main.js?v=' + timestamp;
         loadJS(js, function() {
-          window.pymChild = pym.Child({ renderCallback: window.onResize, polling: true });
-          pymChild.onMessage('enter-view', window.enterView);
-          pymChild.sendMessage('ready', true);
+          console.log('Loaded');
         });
       })();
     </script>
-    <!-- (end) globe iframe embed -->
   </body>
 </html>
