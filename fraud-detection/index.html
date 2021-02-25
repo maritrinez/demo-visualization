@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fraud demo</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="assets/js.df512459.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <div id="logo">WALLAROO</div>
+      <div id="intro">
+        <div id="title">Fraud estimation</div>
+        <div id="subtitle">This chart shows the predicted fraud incidents vs. the historical average real fraud incidents for a 15 minute time window.</div>
+      </div>
+    </div>
+    <div id="visualizados-visualization">
+      <div id="main">
+        <div id="evolution">
+          <ul class="measure-selector">
+            <li><a href="javascript:void(null)" id="volume" class="measure button buttonSelected">volume</a></li>
+            <li><a href="javascript:void(null)" id="amount" class="measure button">amount ($)</a></li>
+          </ul>
+        </div>
+        <div id="info">
+          <div id="tooltip" class="widget">
+            <div class="left">
+              <div class="title">Fraud Estimate</div>
+              <div class="time"></div>
+            </div>
+            <div class="right">
+              <div class="actual"></div>
+              <div class="historical"></div>
+            </div>
+          </div>
+
+          <div id="grade" class="widget">
+            <div class="title">Fraud Grade</div>  
+          </div>
+          
+          <div id="type" class="widget">
+            <div class="title">Fraud Type</div>    
+          </div>
+        </div>
+      </div>
+      <div id="details"></div>
+    </div>
+  </div>
+
+  
+  <script src="assets/js.031c726d.js"></script>
+</body>
+</html>
